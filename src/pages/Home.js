@@ -3,18 +3,19 @@ import { about, products } from '../data/products'
 import { GrCatalog } from 'react-icons/gr'
 import { BiSupport } from 'react-icons/bi'
 import { FaUserFriends } from 'react-icons/fa'
-import Carousel from '../components/Carousel/Carousel'
 import { AboutContainer, AboutContent, AboutiImg, AboutImgContainer, AboutInfo, Btn, ContactContainer, ContactInfo, ContactMap, Heading, IconContainer, InfoItem, InfoList, Map, ProductImage, ProductInfo, ProductName, ProductsContainer, ProductsGrid, ProductText, ProductWrapper, SectionHome, ServicesArticle, ServicesContainer, Subtitle, Text } from './HomeElements'
-import CarouselHero from '../components/Carousel/CarouselHero'
+import { MainCarousel } from '../components/Carousel/MainCarrousel.js/Carousel'
+import { SmallCarousel } from '../components/Carousel/SmallCarousel/SmallCarousel'
 import ImageGrid from '../components/ImageGrid/ImageGrid'
 
 const Home = () => {
     const [show, setShow] = useState([products[1], products[3], products[5], products[8]])
+    const textCarouselHero = ['Llevamos confort a tu hogar', 'Diseños y acabados Exclusivos', 'Realizamos proyectos a la medida']
     const getRandomProduct = () => {
         const selectedProducts = []
         const productList = products
         let i = 0
-        while(i < 4){
+        while (i < 4) {
             const idx = Math.floor(Math.random() * products.length)
             selectedProducts.push(productList[idx])
             productList.splice(idx, 1)
@@ -25,34 +26,43 @@ const Home = () => {
     useEffect(() => {
         getRandomProduct()
     }, [])
-    console.log(show)
-    
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+        const updateWidth = () => {
+            const width = document.body.clientWidth
+            setWidth(width)
+        }
+        updateWidth()
+        window.addEventListener("resize", updateWidth)
+    })
+
     return (
         <>
             <main>
-                <CarouselHero />
+            <MainCarousel text={textCarouselHero} />
                 <SectionHome id='about'>
                     <AboutContainer>
-                    <AboutContent>
-                        <AboutInfo>
-                            <Heading about>En EcoQuartz</Heading>
-                            <Subtitle about>Comercializamos productos en mármol, granito y piedras sintéticas. Además de insumos para el sector construcción</Subtitle>
-                            <Text about>Te invitamos a conocer nuestra gran variedad de diseños y materiales de excelente calidad</Text>
-                        </AboutInfo>
-                        <AboutImgContainer>
-                        <AboutiImg src={about[0]} alt=""  />
-                        </AboutImgContainer>
-                    </AboutContent>
-                    <AboutContent>
-                        <AboutInfo>
-                            <Heading about>Somos una empresa Nacional</Heading>
-                            <Subtitle about>Contamos con más de 15 años de experiencia</Subtitle>
-                            <Text about>Caracterizándonos por manejar un servicio integral y flexible que nos permite amoldarnos a los gustos y necesidades del cliente</Text>
-                        </AboutInfo>
-                        <AboutImgContainer>
-                        <AboutiImg src={about[1]} alt=""  />
-                        </AboutImgContainer>
-                    </AboutContent>
+                        <AboutContent>
+                            <AboutInfo>
+                                <Heading about>En EcoQuartz</Heading>
+                                <Subtitle about>Comercializamos productos en mármol, granito y piedras sintéticas. Además de insumos para el sector construcción</Subtitle>
+                                <Text about>Te invitamos a conocer nuestra gran variedad de diseños y materiales de excelente calidad</Text>
+                            </AboutInfo>
+                            <AboutImgContainer>
+                                <AboutiImg src={about[0]} alt="" />
+                            </AboutImgContainer>
+                        </AboutContent>
+                        <AboutContent>
+                            <AboutInfo>
+                                <Heading about>Somos una empresa Nacional</Heading>
+                                <Subtitle about>Contamos con más de 15 años de experiencia</Subtitle>
+                                <Text about>Caracterizándonos por manejar un servicio integral y flexible que nos permite amoldarnos a los gustos y necesidades del cliente</Text>
+                            </AboutInfo>
+                            <AboutImgContainer>
+                                <AboutiImg src={about[1]} alt="" />
+                            </AboutImgContainer>
+                        </AboutContent>
                     </AboutContainer>
                 </SectionHome>
                 <SectionHome id='services' bgDark={true}>
@@ -73,7 +83,7 @@ const Home = () => {
                         </ServicesArticle>
                         <ServicesArticle>
                             <IconContainer>
-                            <GrCatalog />
+                                <GrCatalog />
                             </IconContainer>
                             <Heading>Catalogo</Heading>
                             <Text>Catalogo de productos amplio y exclusivo de grandes marcas, todo a tu disposición.</Text>
@@ -81,8 +91,11 @@ const Home = () => {
                     </ServicesContainer>
                 </SectionHome>
                 <SectionHome>
-                    <Carousel height='300px'/>
+                    {
+                    width < 768 ? 
+                    <SmallCarousel height={'300px'}/> :
                     <ImageGrid />
+                    }                   
                 </SectionHome>
                 <SectionHome id='products'>
                     <ProductsContainer>

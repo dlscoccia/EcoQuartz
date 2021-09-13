@@ -21,6 +21,12 @@ import grid7 from '../assets/slider/grid7.jpg'
 import grid8 from '../assets/slider/grid8.jpg'
 import about1 from '../assets/images/about1.jpg'
 import about2 from '../assets/images/about2.jpg'
+import small1 from '../assets/slider/small1.jpg'
+import small2 from '../assets/slider/small2.jpg'
+import small3 from '../assets/slider/small3.jpg'
+import small4 from '../assets/slider/small4.jpg'
+import small5 from '../assets/slider/small5.jpg'
+import small6 from '../assets/slider/small6.jpg'
 
 export const products = [{
         id: 1,
@@ -116,7 +122,7 @@ export const products = [{
     {
         id: 10,
         name: 'Gravilla 25kg',
-        description: 'un material básico en la construcción puesto que sirve de relleno a la hora de hacer hormigón (junto con cemento y agua), consiguiendo una mayor resistencia ante el desgaste.',
+        description: 'Un material básico en la construcción puesto que sirve de relleno a la hora de hacer hormigón (junto con cemento y agua), consiguiendo una mayor resistencia ante el desgaste.',
         image: gravilla_saco,
         price: 12,
         price_discount: 10,
@@ -136,3 +142,5 @@ export const gridImages = [
 export const about = [
     about1, about2
 ]
+
+export const smallCarouselImages = [small1, small2, small3, small4, small5, small6]

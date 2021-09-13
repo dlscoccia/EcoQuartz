@@ -5,17 +5,29 @@ import { FaMinus } from 'react-icons/fa'
 
 
 const ProductItem = ({ data, cart, addToCart, delFromCart }) => {
-    const [state, setstate] = useState(0)
+    // States: qty: handles quantity of item; desable handle delete buttom behavior
+    const [qty, setQty] = useState(0)
+    const [disable, setDisable] = useState(true)
+    
+    //Data for each item from props
     const { id, name, price, image, description } = data
     const item = cart.filter(item => item.id === id)
-
+    // Effect that controls the quantity
     useEffect(() => {
         if (item[0]) {
-            setstate(item[0].qty)
+            setQty(item[0].qty)
         } else {
-            setstate(0)
+            setQty(0)
         }
     }, [item]);
+    // Effect that toggle disabled on delete button
+    useEffect(() => {
+        if (qty > 0) {
+            setDisable(false)
+        } else {
+            setDisable(true)
+        }
+    }, [qty]);
 
     return (
         <ItemContainer >
@@ -32,8 +44,8 @@ const ProductItem = ({ data, cart, addToCart, delFromCart }) => {
                     <Button onClick={() => addToCart(id)}>
                         <BiPlusMedical />
                     </Button>
-                    <Quantity>{state}</Quantity>
-                    <Button disabled Button onClick={() => delFromCart(id)} >
+                    <Quantity>{qty}</Quantity>
+                    <Button disabled={disable} Button onClick={() => delFromCart(id)} >
                         <FaMinus />
                     </Button>
                 </Controls>

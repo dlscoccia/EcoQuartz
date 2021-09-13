@@ -1,14 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../../App'
-import Form from '../Form'
 import ProductItem from '../ProductItem'
 import { BtnContainer, Button, CartLink, Heading, ProductsContainer, ProductsGrid } from './ProductsListElements'
 
 const ProductsList = () => {
     const { cartState, addToCart, delFromCart } = useContext(CartContext)
     const { products, cart } = cartState
+    
     const [productList, setProductList] = useState(products)
-
     const filter = (category) => {
         if (category === 'todos') {
             setProductList(products)

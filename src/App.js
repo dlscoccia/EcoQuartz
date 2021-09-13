@@ -20,7 +20,6 @@ function App() {
       payload: id
     })
   }
-
   const delFromCart = (id, all = false) => {
     console.log(all)
     if (!all) {

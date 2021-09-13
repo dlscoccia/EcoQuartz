@@ -15,13 +15,13 @@ const ShoppingCart = () => {
         }
         return total
     }
+    const text = whatsAppMessage(cart)
     const total = getTotal()
     return (
         <CartContainer>
             {
                 cart.length > 0 ?
-
-                    <CartItems className='box'>
+                    <CartItems>
                         {
                             cart.map((item, idx) => <CartItem key={idx} data={item} delFromCart={delFromCart} addToCart={addToCart} />)
                         }
@@ -37,7 +37,7 @@ const ShoppingCart = () => {
 
             <LinksContainer>
                 <LinkR to='/products'>Productos</LinkR>
-                <LinkW to='/#' onClick={() => whatsAppMessage(cart)}>Enviar</LinkW>
+                <LinkW href={`https://wa.me/573043822536?text=${text}`}>Enviar</LinkW>
             </LinksContainer>
         </CartContainer>
     )

@@ -9,6 +9,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 margin-top: 80px;
+width: 100%;
 `
 
 export const LinksContainer = styled.div`
@@ -33,7 +34,11 @@ color: var(--blue);
 `
 
 export const CartItems = styled.div`
+width: 100%;
 
+@media screen and (min-width: 1024px) {
+  width: 60%;
+}
 `
 
 export const LinkR = styled(Link)`

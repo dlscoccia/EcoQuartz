@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ItemContainer = styled.div`
 display: flex;
+width: 100%;
 flex-direction: column;
 justify-content: center;
 padding: 0.5rem;
@@ -23,7 +24,11 @@ margin: 0 auto 5px auto;
 `
 
 export const ItemUpdate = styled.div`
-display: flex`
+display: flex;
+
+
+`
+
 export const ItemTotal = styled.div`
 display: flex;
 font-family: var(--secundary);

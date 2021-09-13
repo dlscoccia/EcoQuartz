@@ -107,7 +107,7 @@ display: flex;
 flex-direction: column;
 gap: 1.5rem;
 justify-content: space-between;
-align-items: baseline;
+align-items: center;
 
 @media screen and (min-width: 1024px) {
   flex-direction: row;

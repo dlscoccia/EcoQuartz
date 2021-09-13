@@ -65,7 +65,7 @@ const Carousel = ({images = gridImages, height}) => {
         <Slide>
           <ImgSlide src={img1} alt="" height={height}/>
           <SlideText>
-            <p>LLevamos confort a tu hogar</p>
+            <p>{}</p>
           </SlideText>
         </Slide>
         <Slide>
@@ -73,7 +73,7 @@ const Carousel = ({images = gridImages, height}) => {
           <ImgSlide src={img2} alt="" height={height}/>
           </a>
           <SlideText>
-            <p>LLevamos confort a tu hogar</p>
+            <p></p>
           </SlideText>
         </Slide>
         <Slide>
@@ -81,7 +81,7 @@ const Carousel = ({images = gridImages, height}) => {
           <ImgSlide src={img3} alt="" height={height}/>
           </a>
           <SlideText>
-            <p>LLevamos confort a tu hogar</p>
+            <p></p>
           </SlideText>
         </Slide>
       </SlideshowContainer>

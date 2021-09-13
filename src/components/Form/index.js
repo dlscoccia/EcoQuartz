@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
-import { FormArea, FormContainer, FormHeading, FormLabel, FormInput, InputContainer, SendBtn } from './FormElements'
+import { FormArea, FormContainer, FormHeading, FormInput, InputContainer, SendBtn } from './FormElements'
+import emailjs from 'emailjs-com';
 
 const Form = () => {
   const [text, setText] = useState({ name: '', email: '', message: '' })
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    emailjs.sendForm('ecoquartz', 'template_85nu3tr', e.target, 'user_H1jEYE2L114QJWfgK6TiV')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   }
 
   const handleChange = (e) => {
@@ -25,9 +32,7 @@ const Form = () => {
         break;
     }
   }
-  const sendData = () => {
-    console.log(text)
-  }
+  
   return (
     <>
       <FormHeading>
@@ -40,7 +45,7 @@ const Form = () => {
         <FormInput type="email" id="email" value={text.email} onChange={handleChange} placeholder='Email'/>
         </InputContainer>
         <FormArea id="area" value={text.message} onChange={handleChange} placeholder='Escribe tu mensaje' />
-        <SendBtn type="submit" value="Enviar" onClick={sendData} />
+        <SendBtn type="submit" value="Enviar" onClick={handleSubmit} />
       </FormContainer>
     </>
   )
