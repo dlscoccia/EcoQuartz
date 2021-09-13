@@ -10,7 +10,7 @@ const Header = () => {
       setIsOpen(!isOpen)
       isOpen ? setScroll('{overflow-y: hidden}') : setScroll('{overflow-y: visible}')
   }
-  
+  console.log(scroll)
   return (
     <>
       <Navbar toggle={toggle}/>

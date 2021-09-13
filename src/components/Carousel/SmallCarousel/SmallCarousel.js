@@ -44,7 +44,7 @@ export const SmallCarousel = ({height, text = ['','','', '', '', '']}) => {
 				</Slide>
 				<Slide>
 					<a href="/">
-						<Img src={img5} alt="imag2"/>
+						<Img src={img1} alt="imag2"/>
 					</a>
 					<TextoSlide>
 						<p>{text5}</p>
