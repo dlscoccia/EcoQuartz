@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react'
-import { slider } from '../../data/products'
+import { gridImages } from '../../data/products'
 import { RiArrowDropLeftLine } from 'react-icons/ri'
 import { RiArrowDropRightLine } from 'react-icons/ri'
 import styled from 'styled-components'
 
 
-const Carousel = ({slides = slider, height}) => {
-  const [img1, img2, img3] = slides
+const Carousel = ({images = gridImages, height}) => {
+  const [img1, img2, img3] = images
   const slideShow = useRef(null)
   const intervalSlideShow = useRef(null)
 
@@ -101,6 +101,7 @@ export const MainContainer = styled.div`
 overflow: hidden;
 max-width: 100%;
 position: relative;
+margin: 2rem 0;
 `
 
 export const ImgSlide = styled.img`

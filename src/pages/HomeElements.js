@@ -11,7 +11,7 @@ background-color: ${({bgDark}) => bgDark ? 'var(--gray)' : '#ffffff'};
 export const Heading = styled.h2`
 font-family: var(--primary);
 font-size: 24px;
-margin: 1.5rem 0 1rem 0;
+padding: 1.5rem 0 1rem 0;
 color: ${({about}) => about ? 'var(--yellow)' : 'var(--dark-blue)'};
 text-align: center;
 
@@ -43,10 +43,9 @@ export const Text = styled.p`
 text-align: center;
 font-size: 14px;
 font-family: var(--secundary);
-margin-bottom: 1.5rem;
 color: ${({about}) => about ? 'var(--dark-gray)' : '#333333'};
 font-weight: 300;
-padding: 0 5px;
+padding: 0 5px 1.5rem 0;
 
 @media screen and (min-width: 768px) {
   font-size: 16px;
@@ -73,6 +72,7 @@ export const AboutContent = styled.div`
 
 export const AboutInfo = styled.div`
 width: 100%;
+height: 100%;
 background-color: var(--dark-blue);
 
 @media screen and (min-width: 1024px) {

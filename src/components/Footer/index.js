@@ -12,7 +12,7 @@ const Footer = () => {
         Todos los derechos reservados {new Date().getFullYear()}
       </TextContainer>
       <SocialMedia>
-        <FaInstagram />
+        <a href="https://www.instagram.com/ecoquartz/?hl=en" target='_blank' rel='noreferrer'><FaInstagram /></a>
       </SocialMedia>
     </FooterContainer>
   )

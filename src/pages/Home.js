@@ -1,38 +1,56 @@
-import React from 'react'
-import { slider } from '../data/products'
+import React, { useEffect, useState } from 'react'
+import { about, products } from '../data/products'
 import { GrCatalog } from 'react-icons/gr'
 import { BiSupport } from 'react-icons/bi'
 import { FaUserFriends } from 'react-icons/fa'
 import Carousel from '../components/Carousel/Carousel'
 import { AboutContainer, AboutContent, AboutiImg, AboutImgContainer, AboutInfo, Btn, ContactContainer, ContactInfo, ContactMap, Heading, IconContainer, InfoItem, InfoList, Map, ProductImage, ProductInfo, ProductName, ProductsContainer, ProductsGrid, ProductText, ProductWrapper, SectionHome, ServicesArticle, ServicesContainer, Subtitle, Text } from './HomeElements'
-const [slider2, slider3, slider4] = slider
-//const products 
-const Home = () => {
+import CarouselHero from '../components/Carousel/CarouselHero'
+import ImageGrid from '../components/ImageGrid/ImageGrid'
 
+const Home = () => {
+    const [show, setShow] = useState([products[1], products[3], products[5], products[8]])
+    const getRandomProduct = () => {
+        const selectedProducts = []
+        const productList = products
+        let i = 0
+        while(i < 4){
+            const idx = Math.floor(Math.random() * products.length)
+            selectedProducts.push(productList[idx])
+            productList.splice(idx, 1)
+            i++
+        }
+        setShow(selectedProducts)
+    }
+    useEffect(() => {
+        getRandomProduct()
+    }, [])
+    console.log(show)
+    
     return (
         <>
             <main>
-                <Carousel />
+                <CarouselHero />
                 <SectionHome id='about'>
                     <AboutContainer>
                     <AboutContent>
                         <AboutInfo>
-                            <Heading about={true}>En EcoQuartz</Heading>
-                            <Subtitle about={true}>Comercializamos productos en mármol, granito y piedras sintéticas. Además de insumos para el sector construcción</Subtitle>
-                            <Text about={true}>Te invitamos a conocer nuestra gran variedad de diseños y materiales de excelente calidad</Text>
+                            <Heading about>En EcoQuartz</Heading>
+                            <Subtitle about>Comercializamos productos en mármol, granito y piedras sintéticas. Además de insumos para el sector construcción</Subtitle>
+                            <Text about>Te invitamos a conocer nuestra gran variedad de diseños y materiales de excelente calidad</Text>
                         </AboutInfo>
                         <AboutImgContainer>
-                        <AboutiImg src={slider2} alt=""  />
+                        <AboutiImg src={about[0]} alt=""  />
                         </AboutImgContainer>
                     </AboutContent>
                     <AboutContent>
                         <AboutInfo>
-                            <Heading about={true}>Somos una empresa Nacional</Heading>
-                            <Subtitle about={true}>Contamos con más de 15 años de experiencia</Subtitle>
-                            <Text about={true}>Caracterizándonos por manejar un servicio integral y flexible que nos permite amoldarnos a los gustos y necesidades del cliente</Text>
+                            <Heading about>Somos una empresa Nacional</Heading>
+                            <Subtitle about>Contamos con más de 15 años de experiencia</Subtitle>
+                            <Text about>Caracterizándonos por manejar un servicio integral y flexible que nos permite amoldarnos a los gustos y necesidades del cliente</Text>
                         </AboutInfo>
                         <AboutImgContainer>
-                        <AboutiImg src={slider2} alt=""  />
+                        <AboutiImg src={about[1]} alt=""  />
                         </AboutImgContainer>
                     </AboutContent>
                     </AboutContainer>
@@ -64,37 +82,38 @@ const Home = () => {
                 </SectionHome>
                 <SectionHome>
                     <Carousel height='300px'/>
+                    <ImageGrid />
                 </SectionHome>
                 <SectionHome id='products'>
                     <ProductsContainer>
                         <Heading>Productos Destacados</Heading>
                         <ProductsGrid>
                             <ProductWrapper reverse={false}>
-                                <ProductImage src={slider3} alt="" />
+                                <ProductImage src={show[0].image} alt={show[0].name} />
                                 <ProductInfo>
-                                    <ProductName>Producto 1</ProductName>
-                                    <ProductText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum molestiae minus voluptate!</ProductText>
+                                    <ProductName>{show[0].name}</ProductName>
+                                    <ProductText>{show[0].description}</ProductText>
                                 </ProductInfo>
                             </ProductWrapper>
                             <ProductWrapper reverse={true}>
-                                <ProductImage src={slider3} alt="" />
+                                <ProductImage src={show[1].image} alt={show[1].name} />
                                 <ProductInfo>
-                                    <ProductName>Producto 1</ProductName>
-                                    <ProductText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum molestiae minus voluptate!</ProductText>
+                                    <ProductName>{show[1].name}</ProductName>
+                                    <ProductText>{show[1].description}</ProductText>
                                 </ProductInfo>
                             </ProductWrapper>
                             <ProductWrapper reverse={false}>
-                                <ProductImage src={slider3} alt="" />
+                                <ProductImage src={show[2].image} alt={show[2].name} />
                                 <ProductInfo>
-                                    <ProductName>Producto 1</ProductName>
-                                    <ProductText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum molestiae minus voluptate!</ProductText>
+                                    <ProductName>{show[2].name}</ProductName>
+                                    <ProductText>{show[2].description}</ProductText>
                                 </ProductInfo>
                             </ProductWrapper>
                             <ProductWrapper reverse={true}>
-                                <ProductImage src={slider3} alt="" />
+                                <ProductImage src={show[3].image} alt={show[3].name} />
                                 <ProductInfo>
-                                    <ProductName>Producto 1</ProductName>
-                                    <ProductText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum molestiae minus voluptate!</ProductText>
+                                    <ProductName>{show[3].name}</ProductName>
+                                    <ProductText>{show[3].description}</ProductText>
                                 </ProductInfo>
                             </ProductWrapper>
                         </ProductsGrid>

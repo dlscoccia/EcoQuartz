@@ -8,11 +8,19 @@ import cemento_gris from '../assets/images/cemento_gris.jpg'
 import cemento_blanco from '../assets/images/cemento_blanco.jpg'
 import cal_sb from '../assets/images/cal_sb.jpeg'
 import gravilla_saco from '../assets/images/gravilla_saco.jpg'
-//import slider1 from '../assets/slider/slider-1.mp4'
-import slider2 from '../assets/slider/slider-2.jpg'
-import slider3 from '../assets/slider/slider-3.jpg'
-import slider4 from '../assets/slider/slider-4.jpg'
-
+import slide1 from '../assets/slider/slide1.jpg'
+import slide2 from '../assets/slider/slide2.jpg'
+import slide3 from '../assets/slider/slide3.jpg'
+import grid1 from '../assets/slider/grid1.jpg'
+import grid2 from '../assets/slider/grid2.jpg'
+import grid3 from '../assets/slider/grid3.jpg'
+import grid4 from '../assets/slider/grid4.jpg'
+import grid5 from '../assets/slider/grid5.jpg'
+import grid6 from '../assets/slider/grid6.jpg'
+import grid7 from '../assets/slider/grid7.jpg'
+import grid8 from '../assets/slider/grid8.jpg'
+import about1 from '../assets/images/about1.jpg'
+import about2 from '../assets/images/about2.jpg'
 
 export const products = [{
         id: 1,
@@ -90,7 +98,7 @@ export const products = [{
         name: 'Cemento Gris 40kg',
         description: 'Es especial para elementos estructurales como cimientos, losas, vigas, columnas y muros. Además, es ideal para la producción de elementos prefabricados de todo tipo y concretos de alta resistencia.',
         image: cemento_gris,
-        price: 'na',
+        price: 7,
         price_discount: 5.5,
         qty: 0,
         category: 'pegamento'
@@ -100,7 +108,7 @@ export const products = [{
         name: 'Cemento Blanco 25kg',
         description: 'Es especial para elementos estructurales como cimientos, losas, vigas, columnas y muros. Además, es ideal para la producción de elementos prefabricados de todo tipo y concretos de alta resistencia.',
         image: cemento_blanco,
-        price: 'na',
+        price: 24,
         price_discount: 20,
         qty: 0,
         category: 'pegamento'
@@ -108,15 +116,23 @@ export const products = [{
     {
         id: 10,
         name: 'Gravilla 25kg',
-        description: 'lorem lorem',
+        description: 'un material básico en la construcción puesto que sirve de relleno a la hora de hacer hormigón (junto con cemento y agua), consiguiendo una mayor resistencia ante el desgaste.',
         image: gravilla_saco,
-        price: 'na',
+        price: 12,
         price_discount: 10,
         qty: 0,
         category: 'otros'
     },
 ]
 
-export const slider = [
-    slider2, slider3, slider4
+export const slides = [
+    slide1, slide2, slide3
+]
+
+export const gridImages = [
+    grid1, grid2, grid3, grid4, grid5, grid6, grid7, grid8
+]
+
+export const about = [
+    about1, about2
 ]

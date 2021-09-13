@@ -2,13 +2,34 @@ import styled from "styled-components";
 
 export const ItemContainer = styled.div`
 display: flex;
-justify-content: space-around;
+flex-direction: column;
+justify-content: center;
 padding: 0.5rem;
-gap: 1rem;
+border-bottom: 2px solid var(--dark-blue);
 `
 export const ImgContainer = styled.div`
 display: flex;
 flex: 1;
+`
+
+export const Discount = styled.span`
+display: flex;
+color: red;
+font-style: italic;
+font-size: 12px;
+text-align: center;
+margin: 0 auto 5px auto;
+
+`
+
+export const ItemUpdate = styled.div`
+display: flex`
+export const ItemTotal = styled.div`
+display: flex;
+font-family: var(--secundary);
+font-weight: 700;
+justify-content: flex-end;
+margin-right: 1rem;
 `
 
 export const ItemImage = styled.img`
@@ -73,3 +94,7 @@ color: var(--yellow);
 padding: 0.2rem 0.5rem;
 font-size: 20px;
 ` 
+
+export const Total = styled.div`
+display: flex;
+`

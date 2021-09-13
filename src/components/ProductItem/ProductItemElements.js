@@ -5,10 +5,16 @@ display: flex;
 justify-content: space-around;
 padding: 0.5rem;
 gap: 1rem;
+
+@media screen and (min-width: 1024px) {
+  justify-content: center;
+  gap: 0;
+}
 `
 export const ImgContainer = styled.div`
 display: flex;
 flex: 1;
+
 `
 
 export const ItemImage = styled.img`
@@ -21,8 +27,14 @@ export const InfoControlsWrapper = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
+align-items: center;
 gap: 1rem;
 flex: 2;
+
+@media screen and (min-width: 1024px) {
+  flex-direction: row;
+  flex: 3;
+}
 `
 
 export const InfoContainer = styled.div`
@@ -34,11 +46,19 @@ font-size: 18px;
 font-weight: 700;
 font-family: var(--primary);
 text-align: center;
+
+@media screen and (min-width: 1024px) {
+  font-size: 24px;
+}
 `
 export const Description = styled.p`
 font-size: 12px;
 font-family: var(--secundary);
 margin: 10px 0;
+
+@media screen and (min-width: 1024px) {
+  font-size: 18px;
+}
 `
 
 export const Controls = styled.div`

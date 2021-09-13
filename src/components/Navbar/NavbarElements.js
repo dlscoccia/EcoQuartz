@@ -47,6 +47,23 @@ font-family: var(--primary);
 }
 `
 
+export const NavLinkR = styled(LinkR)`
+display: flex;
+align-items: center;
+text-decoration: none;
+padding: 0 1rem;
+height: 100%;
+cursor: pointer;
+
+&:active {
+    border-bottom: 3px solid var(--blue);
+}
+
+&:hover {
+    color: var(--blue);
+}
+`
+
 export const MobileIcon = styled.div`
     display: none;
     position: absolute;

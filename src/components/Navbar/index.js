@@ -10,7 +10,8 @@ import {
     NavLinks,
     NavBtn,
     NavBtnLink,
-    Logo
+    Logo,
+    NavLinkR
 } from './NavbarElements'
 import { FaShoppingCart } from 'react-icons/fa'
 import { useLocation } from 'react-router'
@@ -64,10 +65,10 @@ const Navbar = ({ toggle }) => {
                             </NavMenu> :
                             <NavMenu>
                                 <NavItem>
-                                    <NavLinks to='/' smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass='active'>INICIO</NavLinks>
+                                    <NavLinkR to='/'>INICIO</NavLinkR>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLinks to='signup' smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass='active'>PRODUCTOS</NavLinks>
+                                    <NavLinkR to='/products'>PRODUCTOS</NavLinkR>
                                 </NavItem>
                             </NavMenu>}
                     <NavBtn>
